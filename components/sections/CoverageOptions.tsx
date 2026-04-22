@@ -9,48 +9,21 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
 
-const plans = [
-  {
-    icon: Clock,
-    title: "Term Life Insurance",
-    description:
-      "Affordable coverage for a set period — 10, 20, or 30 years. Lock in low rates while you're young. Ideal for covering mortgages, kids' education, and income replacement.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Whole Life Insurance",
-    description:
-      "Permanent coverage that never expires. Builds cash value over time that you can borrow against. Guaranteed death benefit for your beneficiaries.",
-  },
-  {
-    icon: Layers,
-    title: "Universal Life Insurance",
-    description:
-      "Flexible permanent coverage with adjustable premiums and death benefits. Accumulates cash value with potential for higher returns.",
-  },
-  {
-    icon: Heart,
-    title: "Final Expense Insurance",
-    description:
-      "Smaller, affordable policies designed to cover funeral costs, medical bills, and end-of-life expenses. No medical exam required in most cases.",
-  },
-  {
-    icon: UserPlus,
-    title: "Group Life Supplement",
-    description:
-      "Your employer's group policy may not be enough. A supplemental policy fills the gap and stays with you if you change jobs.",
-  },
-  {
-    icon: CheckCircle2,
-    title: "Guaranteed Issue Life",
-    description:
-      "No health questions, no medical exams. Guaranteed acceptance regardless of pre-existing conditions. Coverage starts immediately.",
-  },
+const plans: { icon: typeof Clock; titleKey: TranslationKey; descKey: TranslationKey }[] = [
+  { icon: Clock, titleKey: "coverage.termTitle", descKey: "coverage.termDesc" },
+  { icon: ShieldCheck, titleKey: "coverage.wholeTitle", descKey: "coverage.wholeDesc" },
+  { icon: Layers, titleKey: "coverage.universalTitle", descKey: "coverage.universalDesc" },
+  { icon: Heart, titleKey: "coverage.finalTitle", descKey: "coverage.finalDesc" },
+  { icon: UserPlus, titleKey: "coverage.groupTitle", descKey: "coverage.groupDesc" },
+  { icon: CheckCircle2, titleKey: "coverage.guaranteedTitle", descKey: "coverage.guaranteedDesc" },
 ];
 
 export default function CoverageOptions() {
   useScrollReveal();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -65,7 +38,7 @@ export default function CoverageOptions() {
             className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest"
             style={{ color: "#C9A040" }}
           >
-            Coverage Options
+            {t("coverage.label")}
           </span>
           <h2
             className="mb-4 font-extrabold"
@@ -75,14 +48,13 @@ export default function CoverageOptions() {
               lineHeight: 1.2,
             }}
           >
-            Life Insurance Plans Built for You
+            {t("coverage.headline")}
           </h2>
           <p
             className="mx-auto max-w-xl leading-relaxed"
             style={{ color: "#334155", fontSize: "1.05rem" }}
           >
-            We shop multiple carriers to find the best coverage at the best rate
-            for your situation. Here are the types of plans available to you.
+            {t("coverage.subheadline")}
           </p>
         </div>
 
@@ -90,7 +62,7 @@ export default function CoverageOptions() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan, i) => (
             <div
-              key={plan.title}
+              key={plan.titleKey}
               className="reveal group relative rounded-2xl bg-white p-8 transition-all duration-300"
               style={{
                 boxShadow: "0 2px 20px rgba(20,79,143,0.08)",
@@ -122,13 +94,13 @@ export default function CoverageOptions() {
                 className="mb-3 text-lg font-bold"
                 style={{ color: "#0A2D5A" }}
               >
-                {plan.title}
+                {t(plan.titleKey)}
               </h3>
               <p
                 className="text-sm leading-relaxed"
                 style={{ color: "#334155" }}
               >
-                {plan.description}
+                {t(plan.descKey)}
               </p>
             </div>
           ))}

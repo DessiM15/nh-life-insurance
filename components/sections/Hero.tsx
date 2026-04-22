@@ -1,8 +1,11 @@
 "use client";
 
 import { Shield, ChevronDown } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   const scrollToForm = () => {
     document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -117,8 +120,7 @@ export default function Hero() {
             animationDelay: "0.2s",
           }}
         >
-          Your Family Deserves Protection.{" "}
-          Let&apos;s Find the Right Plan.
+          {t("hero.headline")}
         </h1>
 
         {/* Gold accent bar */}
@@ -150,9 +152,7 @@ export default function Hero() {
             animationDelay: "0.4s",
           }}
         >
-          New Horizons Benefits Group helps individuals, families, and business
-          owners find affordable life insurance — with options that fit every
-          budget and stage of life.
+          {t("hero.subheadline")}
         </p>
 
         {/* CTA Button */}
@@ -182,7 +182,7 @@ export default function Hero() {
               (e.currentTarget.style.background = "#C9A040")
             }
           >
-            Get My Free Quote →
+            {t("hero.cta")}
           </button>
         </div>
 
@@ -197,19 +197,15 @@ export default function Hero() {
             animationDelay: "0.6s",
           }}
         >
-          {[
-            "Multi-Carrier Access",
-            "No Medical Exam Options",
-            "Free Consultation",
-          ].map((item) => (
+          {(["hero.trust1", "hero.trust2", "hero.trust3"] as const).map((key) => (
             <span
-              key={item}
+              key={key}
               style={{
                 color: "rgba(255,255,255,0.70)",
                 fontSize: "0.875rem",
               }}
             >
-              ✓ {item}
+              ✓ {t(key)}
             </span>
           ))}
         </div>

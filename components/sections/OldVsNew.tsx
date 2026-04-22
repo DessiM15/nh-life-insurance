@@ -2,27 +2,30 @@
 
 import { useEffect, useRef } from "react";
 import { X as XIcon, Check } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
 
-const oldFeatures = [
-  "Only pays when you pass away",
-  "No living benefits included",
-  "No critical illness coverage",
-  "Family must wait for death benefit",
-  "No access to funds during your life",
-  "Doesn't protect retirement savings",
+const oldKeys: TranslationKey[] = [
+  "oldvsnew.old1",
+  "oldvsnew.old2",
+  "oldvsnew.old3",
+  "oldvsnew.old4",
+  "oldvsnew.old5",
+  "oldvsnew.old6",
 ];
 
-const newFeatures = [
-  "Living benefits for cancer, heart attack & stroke",
-  "Access funds while you're still alive",
-  "Critical illness coverage built in",
-  "Protects your retirement & savings",
-  "Keeps your home & assets safe",
-  "Peace of mind for you AND your family",
+const newKeys: TranslationKey[] = [
+  "oldvsnew.new1",
+  "oldvsnew.new2",
+  "oldvsnew.new3",
+  "oldvsnew.new4",
+  "oldvsnew.new5",
+  "oldvsnew.new6",
 ];
 
 export default function OldVsNew() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,7 +67,7 @@ export default function OldVsNew() {
               fontFamily: "var(--font-mono)",
             }}
           >
-            THE DIFFERENCE
+            {t("oldvsnew.label")}
           </span>
           <h2
             style={{
@@ -75,7 +78,7 @@ export default function OldVsNew() {
               marginBottom: "16px",
             }}
           >
-            Not All Life Insurance Is Created Equal
+            {t("oldvsnew.headline")}
           </h2>
           <p
             style={{
@@ -86,8 +89,7 @@ export default function OldVsNew() {
               margin: "0 auto",
             }}
           >
-            See how modern life insurance with living benefits compares
-            to the old way of doing things.
+            {t("oldvsnew.subheadline")}
           </p>
         </div>
 
@@ -132,7 +134,7 @@ export default function OldVsNew() {
                 marginBottom: "8px",
               }}
             >
-              Traditional Life Insurance
+              {t("oldvsnew.oldTitle")}
             </h3>
             <p
               style={{
@@ -141,12 +143,12 @@ export default function OldVsNew() {
                 marginBottom: "28px",
               }}
             >
-              The old way — limited and outdated
+              {t("oldvsnew.oldSubtitle")}
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              {oldFeatures.map((feature) => (
+              {oldKeys.map((key) => (
                 <div
-                  key={feature}
+                  key={key}
                   style={{
                     display: "flex",
                     alignItems: "flex-start",
@@ -174,7 +176,7 @@ export default function OldVsNew() {
                       lineHeight: 1.5,
                     }}
                   >
-                    {feature}
+                    {t(key)}
                   </span>
                 </div>
               ))}
@@ -221,7 +223,7 @@ export default function OldVsNew() {
                 borderRadius: "999px",
               }}
             >
-              Recommended
+              {t("oldvsnew.recommended")}
             </div>
             <h3
               style={{
@@ -231,7 +233,7 @@ export default function OldVsNew() {
                 marginBottom: "8px",
               }}
             >
-              Modern Life Insurance
+              {t("oldvsnew.newTitle")}
             </h3>
             <p
               style={{
@@ -240,12 +242,12 @@ export default function OldVsNew() {
                 marginBottom: "28px",
               }}
             >
-              With living benefits — protection while you&apos;re alive
+              {t("oldvsnew.newSubtitle")}
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              {newFeatures.map((feature) => (
+              {newKeys.map((key) => (
                 <div
-                  key={feature}
+                  key={key}
                   style={{
                     display: "flex",
                     alignItems: "flex-start",
@@ -273,7 +275,7 @@ export default function OldVsNew() {
                       lineHeight: 1.5,
                     }}
                   >
-                    {feature}
+                    {t(key)}
                   </span>
                 </div>
               ))}

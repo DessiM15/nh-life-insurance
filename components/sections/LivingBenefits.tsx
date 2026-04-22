@@ -11,23 +11,26 @@ import {
   Brain,
   Activity,
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
 
-const livingBenefits = [
-  { label: "Cancer", icon: HeartPulse, angle: 150 },
-  { label: "Heart Attack", icon: Activity, angle: 90 },
-  { label: "Stroke", icon: Brain, angle: 30 },
+const livingBenefits: { key: TranslationKey; icon: typeof HeartPulse; angle: number }[] = [
+  { key: "living.cancer", icon: HeartPulse, angle: 150 },
+  { key: "living.heartAttack", icon: Activity, angle: 90 },
+  { key: "living.stroke", icon: Brain, angle: 30 },
 ];
 
-const protectedAssets = [
-  { label: "Home", icon: Home },
-  { label: "Car", icon: Car },
-  { label: "Retirement", icon: PiggyBank },
-  { label: "Family", icon: Users },
-  { label: "Savings", icon: Wallet },
+const protectedAssets: { key: TranslationKey; icon: typeof Home }[] = [
+  { key: "living.home", icon: Home },
+  { key: "living.car", icon: Car },
+  { key: "living.retirement", icon: PiggyBank },
+  { key: "living.family", icon: Users },
+  { key: "living.savings", icon: Wallet },
 ];
 
 export default function LivingBenefits() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -74,7 +77,7 @@ export default function LivingBenefits() {
             fontFamily: "var(--font-mono)",
           }}
         >
-          LIVING BENEFITS
+          {t("living.label")}
         </span>
         <h2
           style={{
@@ -85,7 +88,7 @@ export default function LivingBenefits() {
             marginBottom: "20px",
           }}
         >
-          Protection That Works While You&apos;re Still Here
+          {t("living.headline")}
         </h2>
         <p
           style={{
@@ -96,8 +99,7 @@ export default function LivingBenefits() {
             fontStyle: "italic",
           }}
         >
-          Don&apos;t raid your retirement. Don&apos;t sell your home. Modern life insurance
-          gives you access to funds when you need them most — while you&apos;re still alive.
+          {t("living.subheadline")}
         </p>
       </div>
 
@@ -126,7 +128,7 @@ export default function LivingBenefits() {
               const Icon = benefit.icon;
               return (
                 <div
-                  key={benefit.label}
+                  key={benefit.key}
                   style={{
                     background: "rgba(201, 160, 64, 0.15)",
                     border: "1px solid rgba(201, 160, 64, 0.5)",
@@ -143,7 +145,7 @@ export default function LivingBenefits() {
                   }}
                 >
                   <Icon size={18} />
-                  {benefit.label}
+                  {t(benefit.key)}
                 </div>
               );
             })}
@@ -216,16 +218,15 @@ export default function LivingBenefits() {
             {/* Desktop benefit pills - arc-positioned */}
             {livingBenefits.map((benefit, i) => {
               const Icon = benefit.icon;
-              // Calculate arc positions for 3 items
               const positions = [
-                { left: "2%", bottom: "55%" },   // Left: Cancer
-                { left: "50%", bottom: "95%", transform: "translateX(-50%)" }, // Top center: Heart Attack
-                { right: "2%", bottom: "55%" },   // Right: Stroke
+                { left: "2%", bottom: "55%" },
+                { left: "50%", bottom: "95%", transform: "translateX(-50%)" },
+                { right: "2%", bottom: "55%" },
               ];
               const pos = positions[i];
               return (
                 <div
-                  key={benefit.label}
+                  key={benefit.key}
                   className="desktop-benefit-pill"
                   style={{
                     position: "absolute",
@@ -248,7 +249,7 @@ export default function LivingBenefits() {
                   }}
                 >
                   <Icon size={18} />
-                  {benefit.label}
+                  {t(benefit.key)}
                 </div>
               );
             })}
@@ -270,7 +271,7 @@ export default function LivingBenefits() {
                 const Icon = asset.icon;
                 return (
                   <div
-                    key={asset.label}
+                    key={asset.key}
                     className="dome-float"
                     style={{
                       display: "flex",
@@ -297,7 +298,7 @@ export default function LivingBenefits() {
                         letterSpacing: "0.06em",
                       }}
                     >
-                      {asset.label}
+                      {t(asset.key)}
                     </span>
                   </div>
                 );
@@ -326,7 +327,7 @@ export default function LivingBenefits() {
           onMouseEnter={(e) => (e.currentTarget.style.background = "#A07C20")}
           onMouseLeave={(e) => (e.currentTarget.style.background = "#C9A040")}
         >
-          See What You Qualify For →
+          {t("living.cta")}
         </button>
       </div>
 

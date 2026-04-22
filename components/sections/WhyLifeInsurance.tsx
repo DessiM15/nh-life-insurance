@@ -7,27 +7,30 @@ import {
   ArrowRight,
 } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
 
-const cards = [
+const cards: { icon: typeof AlertCircle; titleKey: TranslationKey; textKey: TranslationKey }[] = [
   {
     icon: AlertCircle,
-    title: "Most People Are Underinsured",
-    text: "Nearly half of Americans don't have enough life insurance to cover their family's needs if something unexpected happens.",
+    titleKey: "why.card1Title",
+    textKey: "why.card1Text",
   },
   {
     icon: Users,
-    title: "Employer Coverage Falls Short",
-    text: "Group life insurance through your job typically covers just 1\u20132x your salary \u2014 far less than most families need.",
+    titleKey: "why.card2Title",
+    textKey: "why.card2Text",
   },
   {
     icon: TrendingUp,
-    title: "Rates Go Up Every Year",
-    text: "The younger and healthier you are, the less you'll pay. Locking in coverage now can save you thousands over your lifetime.",
+    titleKey: "why.card3Title",
+    textKey: "why.card3Text",
   },
 ];
 
 export default function WhyLifeInsurance() {
   useScrollReveal();
+  const { t } = useLanguage();
 
   const scrollToForm = () => {
     document
@@ -45,7 +48,7 @@ export default function WhyLifeInsurance() {
               className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest"
               style={{ color: "#C9A040" }}
             >
-              Why Life Insurance Matters
+              {t("why.label")}
             </span>
 
             <h2
@@ -56,7 +59,7 @@ export default function WhyLifeInsurance() {
                 lineHeight: 1.2,
               }}
             >
-              Your Family&apos;s Financial Future Shouldn&apos;t Be Left to Chance.
+              {t("why.headline")}
             </h2>
 
             <p
@@ -67,9 +70,7 @@ export default function WhyLifeInsurance() {
                 fontFamily: "var(--font-serif)",
               }}
             >
-              If something happened to you tomorrow, could your family keep up
-              with the mortgage, bills, and daily expenses? Life insurance
-              ensures your loved ones are protected — no matter what.
+              {t("why.body1")}
             </p>
 
             <p
@@ -80,10 +81,7 @@ export default function WhyLifeInsurance() {
                 fontFamily: "var(--font-serif)",
               }}
             >
-              Yet nearly half of Americans have no life insurance at all, and
-              many who do are severely underinsured. Whether you&apos;re relying
-              on employer coverage or have no policy in place, the gap between
-              what you have and what your family needs could be devastating.
+              {t("why.body2")}
             </p>
 
             <button
@@ -96,7 +94,7 @@ export default function WhyLifeInsurance() {
                 padding: 0,
               }}
             >
-              See how affordable real coverage can be
+              {t("why.cta")}
               <ArrowRight size={18} />
             </button>
           </div>
@@ -105,7 +103,7 @@ export default function WhyLifeInsurance() {
           <div className="flex flex-col gap-5">
             {cards.map((card, i) => (
               <div
-                key={i}
+                key={card.titleKey}
                 className="reveal-right flex items-start gap-4 rounded-2xl bg-white p-5"
                 style={{
                   boxShadow: "0 2px 20px rgba(20,79,143,0.08)",
@@ -123,13 +121,13 @@ export default function WhyLifeInsurance() {
                     className="font-bold mb-1"
                     style={{ color: "#0A2D5A", fontSize: "0.95rem" }}
                   >
-                    {card.title}
+                    {t(card.titleKey)}
                   </p>
                   <p
                     className="leading-relaxed"
                     style={{ color: "#334155", fontSize: "0.95rem" }}
                   >
-                    {card.text}
+                    {t(card.textKey)}
                   </p>
                 </div>
               </div>

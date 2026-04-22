@@ -2,33 +2,42 @@
 
 import { Heart, BookOpen, Building2 } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
 
-const cards = [
+const cards: {
+  number: string;
+  icon: typeof Heart;
+  titleKey: TranslationKey;
+  bodyKey: TranslationKey;
+  hookKey: TranslationKey;
+}[] = [
   {
     number: "01",
     icon: Heart,
-    title: "Young Professionals & New Families",
-    body: "Just starting out? Lock in low rates now while you're young and healthy. Protect your growing family from day one.",
-    hook: "What would happen to your family if your income disappeared tomorrow?",
+    titleKey: "who.card1Title",
+    bodyKey: "who.card1Body",
+    hookKey: "who.card1Hook",
   },
   {
     number: "02",
     icon: BookOpen,
-    title: "Mid-Career & Homeowners",
-    body: "Mortgage, kids' education, retirement savings \u2014 there's a lot riding on your income. Make sure your family is covered if something happens.",
-    hook: "Is your coverage keeping up with your life?",
+    titleKey: "who.card2Title",
+    bodyKey: "who.card2Body",
+    hookKey: "who.card2Hook",
   },
   {
     number: "03",
     icon: Building2,
-    title: "Approaching or In Retirement",
-    body: "Need final expense coverage, estate planning support, or a policy to leave a legacy? We'll find the right fit for your situation.",
-    hook: "Does your coverage survive your career?",
+    titleKey: "who.card3Title",
+    bodyKey: "who.card3Body",
+    hookKey: "who.card3Hook",
   },
 ];
 
 export default function WhoIsItFor() {
   useScrollReveal();
+  const { t } = useLanguage();
 
   return (
     <section style={{ backgroundColor: "#E8F0FA" }}>
@@ -38,7 +47,7 @@ export default function WhoIsItFor() {
           className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest"
           style={{ color: "#C9A040" }}
         >
-          Who This Is For
+          {t("who.label")}
         </span>
 
         <h2
@@ -49,15 +58,14 @@ export default function WhoIsItFor() {
             lineHeight: 1.2,
           }}
         >
-          Life Insurance for Every Stage
+          {t("who.headline")}
         </h2>
 
         <p
           className="mx-auto mb-12 max-w-xl leading-relaxed"
           style={{ color: "#334155", fontSize: "1.05rem" }}
         >
-          Whether you&apos;re just starting out or planning your legacy —
-          there&apos;s a right plan for where you are right now.
+          {t("who.subheadline")}
         </p>
 
         {/* Cards */}
@@ -106,7 +114,7 @@ export default function WhoIsItFor() {
                 className="mb-3 text-xl font-extrabold"
                 style={{ color: "#0A2D5A" }}
               >
-                {card.title}
+                {t(card.titleKey)}
               </h3>
 
               {/* Body */}
@@ -114,7 +122,7 @@ export default function WhoIsItFor() {
                 className="mb-4 text-sm leading-relaxed"
                 style={{ color: "#334155" }}
               >
-                {card.body}
+                {t(card.bodyKey)}
               </p>
 
               {/* Hook */}
@@ -125,7 +133,7 @@ export default function WhoIsItFor() {
                   fontFamily: "var(--font-serif)",
                 }}
               >
-                {card.hook}
+                {t(card.hookKey)}
               </p>
             </div>
           ))}

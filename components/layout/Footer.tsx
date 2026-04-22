@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer style={{ backgroundColor: "#071E40", borderTop: "1px solid #C9A040" }}>
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -25,7 +28,7 @@ export default function Footer() {
                 New Horizons Benefits Group
               </span>
               <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem" }}>
-                Rigo Cuellar | Independent Agent
+                {t("footer.agentName")}
               </span>
               <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.95rem" }}>
                 202 S. Coleman Suite 200, Prosper, TX 75078
@@ -44,7 +47,7 @@ export default function Footer() {
             <span
               style={{ color: "rgba(201,160,64,0.8)", fontSize: "0.85rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "24px" }}
             >
-              Connect
+              {t("footer.connect")}
             </span>
             <div className="flex gap-5">
               {/* Facebook */}
@@ -119,17 +122,17 @@ export default function Footer() {
                 color: "#C9A040",
               }}
             >
-              Licensed in TX · LA · OK · CA
+              {t("footer.licensed")}
             </span>
             <span
               style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem" }}
             >
-              Multi-Carrier Independent Agency
+              {t("footer.multiCarrier")}
             </span>
             <span
               style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.95rem" }}
             >
-              Serving Texans Since Day One
+              {t("footer.servingTexans")}
             </span>
           </div>
         </div>
@@ -142,14 +145,12 @@ export default function Footer() {
           <p
             style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.95rem", marginBottom: "8px" }}
           >
-            &copy; 2026 New Horizons Benefits Group. All rights reserved.
+            {t("footer.copyright")}
           </p>
           <p
             style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.85rem", maxWidth: "42rem", marginLeft: "auto", marginRight: "auto", lineHeight: 1.6 }}
           >
-            New Horizons Benefits Group is an independent insurance agency.
-            Coverage and pricing vary by carrier. All quotes are estimates
-            pending underwriting approval.
+            {t("footer.disclaimer")}
           </p>
         </div>
       </div>

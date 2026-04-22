@@ -3,33 +3,38 @@
 import Image from "next/image";
 import { Star } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
 
-const testimonials = [
+const testimonials: {
+  quoteKey: TranslationKey;
+  nameKey: TranslationKey;
+  roleKey: TranslationKey;
+  initials: string;
+}[] = [
   {
-    quote:
-      "I'd been putting off life insurance for years. Rigo made it so easy \u2014 I got approved with no medical exam and my family is finally protected.",
-    name: "Maria G.",
-    role: "Mother of Three, Houston TX",
+    quoteKey: "testimonials.quote1",
+    nameKey: "testimonials.name1",
+    roleKey: "testimonials.role1",
     initials: "MG",
   },
   {
-    quote:
-      "I needed a policy that covered my family and my business. Rigo found me a plan that did both at a price I could actually afford.",
-    name: "James T.",
-    role: "Small Business Owner, San Antonio TX",
+    quoteKey: "testimonials.quote2",
+    nameKey: "testimonials.name2",
+    roleKey: "testimonials.role2",
     initials: "JT",
   },
   {
-    quote:
-      "I wanted to make sure my grandchildren were taken care of. Rigo set me up with a whole life policy that gives me complete peace of mind.",
-    name: "Linda R.",
-    role: "Retired Professional, Fort Worth TX",
+    quoteKey: "testimonials.quote3",
+    nameKey: "testimonials.name3",
+    roleKey: "testimonials.role3",
     initials: "LR",
   },
 ];
 
 export default function Testimonials() {
   useScrollReveal();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -44,7 +49,7 @@ export default function Testimonials() {
             className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest"
             style={{ color: "#C9A040" }}
           >
-            What Our Clients Say
+            {t("testimonials.label")}
           </span>
           <h2
             className="mb-4 font-extrabold"
@@ -54,15 +59,15 @@ export default function Testimonials() {
               lineHeight: 1.2,
             }}
           >
-            Real Clients. Real Peace of Mind.
+            {t("testimonials.headline")}
           </h2>
         </div>
 
         {/* Testimonial Cards */}
         <div className="grid gap-8 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
+          {testimonials.map((item, i) => (
             <div
-              key={t.name}
+              key={item.initials}
               className="reveal relative rounded-2xl bg-white p-8 transition-all duration-300"
               style={{
                 boxShadow: "0 2px 20px rgba(20,79,143,0.08)",
@@ -114,7 +119,7 @@ export default function Testimonials() {
                   fontStyle: "italic",
                 }}
               >
-                &ldquo;{t.quote}&rdquo;
+                &ldquo;{t(item.quoteKey)}&rdquo;
               </p>
 
               {/* Divider */}
@@ -129,8 +134,8 @@ export default function Testimonials() {
               {/* Author */}
               <div className="flex items-center gap-3">
                 <Image
-                  src={`https://ui-avatars.com/api/?name=${encodeURIComponent(t.initials)}&background=144F8F&color=C9A040&bold=true&size=80`}
-                  alt={t.name}
+                  src={`https://ui-avatars.com/api/?name=${encodeURIComponent(item.initials)}&background=144F8F&color=C9A040&bold=true&size=80`}
+                  alt={t(item.nameKey)}
                   width={40}
                   height={40}
                   className="rounded-full"
@@ -140,13 +145,13 @@ export default function Testimonials() {
                     className="text-sm font-bold"
                     style={{ color: "#0A2D5A" }}
                   >
-                    {t.name}
+                    {t(item.nameKey)}
                   </p>
                   <p
                     className="text-xs"
                     style={{ color: "#64748B" }}
                   >
-                    {t.role}
+                    {t(item.roleKey)}
                   </p>
                 </div>
               </div>

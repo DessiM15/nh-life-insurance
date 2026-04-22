@@ -1,21 +1,17 @@
 "use client";
 
-const stats = [
-  {
-    value: "47%",
-    label: "Of Americans Have No Life Insurance",
-  },
-  {
-    value: "$0",
-    label: "Cost for Your Free Life Insurance Consultation",
-  },
-  {
-    value: "Days",
-    label: "How Fast Coverage Can Be Active — Not Weeks, Days",
-  },
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
+
+const stats: { valueKey: TranslationKey; labelKey: TranslationKey }[] = [
+  { valueKey: "stats.value1", labelKey: "stats.label1" },
+  { valueKey: "stats.value2", labelKey: "stats.label2" },
+  { valueKey: "stats.value3", labelKey: "stats.label3" },
 ];
 
 export default function StatsBar() {
+  const { t } = useLanguage();
+
   return (
     <section
       style={{
@@ -43,7 +39,7 @@ export default function StatsBar() {
         >
           {stats.map((stat, i) => (
             <div
-              key={stat.value}
+              key={stat.valueKey}
               style={{
                 flex: "1 1 200px",
                 display: "flex",
@@ -79,7 +75,7 @@ export default function StatsBar() {
                   lineHeight: 1,
                 }}
               >
-                {stat.value}
+                {t(stat.valueKey)}
               </span>
               <span
                 style={{
@@ -92,7 +88,7 @@ export default function StatsBar() {
                   maxWidth: "180px",
                 }}
               >
-                {stat.label}
+                {t(stat.labelKey)}
               </span>
             </div>
           ))}

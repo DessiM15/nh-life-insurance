@@ -2,33 +2,33 @@
 
 import { Phone, BarChart3, ShieldCheck } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
 
-const steps = [
+const steps: { number: string; icon: typeof Phone; titleKey: TranslationKey; descKey: TranslationKey }[] = [
   {
     number: "1",
     icon: Phone,
-    title: "Free Consultation",
-    description:
-      "Tell us about your family, your goals, and your budget. We'll ask the right questions so we can find the right fit — no pressure, no obligation.",
+    titleKey: "how.step1Title",
+    descKey: "how.step1Desc",
   },
   {
     number: "2",
     icon: BarChart3,
-    title: "Compare Plans",
-    description:
-      "We shop multiple A-rated carriers to find you the best coverage at the best rate. You'll see clear options side by side — no confusing jargon.",
+    titleKey: "how.step2Title",
+    descKey: "how.step2Desc",
   },
   {
     number: "3",
     icon: ShieldCheck,
-    title: "Get Covered",
-    description:
-      "Easy application, fast approval. Many plans require no medical exam. Coverage can be active in days — not weeks. Your family is protected.",
+    titleKey: "how.step3Title",
+    descKey: "how.step3Desc",
   },
 ];
 
 export default function HowItWorks() {
   useScrollReveal();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -43,7 +43,7 @@ export default function HowItWorks() {
             className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest"
             style={{ color: "#C9A040" }}
           >
-            How It Works
+            {t("how.label")}
           </span>
           <h2
             className="mb-4 font-extrabold"
@@ -53,14 +53,13 @@ export default function HowItWorks() {
               lineHeight: 1.2,
             }}
           >
-            Three Simple Steps to Peace of Mind
+            {t("how.headline")}
           </h2>
           <p
             className="mx-auto max-w-xl leading-relaxed"
             style={{ color: "#334155", fontSize: "1.05rem" }}
           >
-            We make getting life insurance as easy as possible — so you can focus
-            on what matters most.
+            {t("how.subheadline")}
           </p>
         </div>
 
@@ -117,7 +116,7 @@ export default function HowItWorks() {
                 className="mb-3 text-lg font-bold"
                 style={{ color: "#0A2D5A" }}
               >
-                {step.title}
+                {t(step.titleKey)}
               </h3>
 
               {/* Description */}
@@ -125,7 +124,7 @@ export default function HowItWorks() {
                 className="text-sm leading-relaxed max-w-xs"
                 style={{ color: "#334155" }}
               >
-                {step.description}
+                {t(step.descKey)}
               </p>
             </div>
           ))}

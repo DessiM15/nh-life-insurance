@@ -4,16 +4,19 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
 
-const navLinks = [
-  { label: "Coverage", href: "#coverage" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Reviews", href: "#testimonials" },
+const navLinks: { key: TranslationKey; href: string }[] = [
+  { key: "nav.coverage", href: "#coverage" },
+  { key: "nav.howItWorks", href: "#how-it-works" },
+  { key: "nav.reviews", href: "#testimonials" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -21,6 +24,76 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleButton = (
+    <div style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "0.8rem", fontWeight: 700 }}>
+      <button
+        onClick={() => setLanguage("en")}
+        style={{
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: "4px 6px",
+          fontWeight: 700,
+          fontSize: "0.8rem",
+          transition: "color 0.3s",
+          color: language === "en" ? "#C9A040" : scrolled ? "rgba(10,45,90,0.45)" : "rgba(255,255,255,0.45)",
+        }}
+      >
+        EN
+      </button>
+      <span style={{ color: scrolled ? "rgba(10,45,90,0.25)" : "rgba(255,255,255,0.25)" }}>|</span>
+      <button
+        onClick={() => setLanguage("es")}
+        style={{
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: "4px 6px",
+          fontWeight: 700,
+          fontSize: "0.8rem",
+          transition: "color 0.3s",
+          color: language === "es" ? "#C9A040" : scrolled ? "rgba(10,45,90,0.45)" : "rgba(255,255,255,0.45)",
+        }}
+      >
+        ES
+      </button>
+    </div>
+  );
+
+  const mobileToggle = (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "4px", fontSize: "0.85rem", fontWeight: 700, padding: "8px 0" }}>
+      <button
+        onClick={() => setLanguage("en")}
+        style={{
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: "6px 10px",
+          fontWeight: 700,
+          fontSize: "0.85rem",
+          color: language === "en" ? "#C9A040" : "rgba(10,45,90,0.4)",
+        }}
+      >
+        EN
+      </button>
+      <span style={{ color: "rgba(10,45,90,0.2)" }}>|</span>
+      <button
+        onClick={() => setLanguage("es")}
+        style={{
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: "6px 10px",
+          fontWeight: 700,
+          fontSize: "0.85rem",
+          color: language === "es" ? "#C9A040" : "rgba(10,45,90,0.4)",
+        }}
+      >
+        ES
+      </button>
+    </div>
+  );
 
   return (
     <nav
@@ -75,11 +148,11 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Nav Links */}
+        {/* Desktop Nav Links + Toggle + CTA */}
         <div className="hidden md:flex" style={{ alignItems: "center", gap: "32px" }}>
           {navLinks.map((link) => (
             <a
-              key={link.label}
+              key={link.key}
               href={link.href}
               style={{
                 fontSize: "0.875rem",
@@ -91,13 +164,12 @@ export default function Navbar() {
               onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A040")}
               onMouseLeave={(e) => (e.currentTarget.style.color = scrolled ? "#0A2D5A" : "#FFFFFF")}
             >
-              {link.label}
+              {t(link.key)}
             </a>
           ))}
-        </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
+          {toggleButton}
+
           <a
             href="#lead-form"
             style={{
@@ -119,7 +191,7 @@ export default function Navbar() {
               e.currentTarget.style.backgroundColor = "#C9A040";
             }}
           >
-            Get a Free Quote
+            {t("nav.cta")}
           </a>
         </div>
 
@@ -145,7 +217,7 @@ export default function Navbar() {
           overflow: "hidden",
           backgroundColor: "#FFFFFF",
           boxShadow: mobileOpen ? "0 4px 20px rgba(0,0,0,0.1)" : "none",
-          maxHeight: mobileOpen ? "320px" : "0",
+          maxHeight: mobileOpen ? "400px" : "0",
           opacity: mobileOpen ? 1 : 0,
           transition: "all 0.3s ease",
         }}
@@ -153,7 +225,7 @@ export default function Navbar() {
         <div style={{ display: "flex", flexDirection: "column", gap: "4px", padding: "8px 24px 24px" }}>
           {navLinks.map((link) => (
             <a
-              key={link.label}
+              key={link.key}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               style={{
@@ -169,9 +241,12 @@ export default function Navbar() {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#E8F0FA")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
             >
-              {link.label}
+              {t(link.key)}
             </a>
           ))}
+
+          {mobileToggle}
+
           <a
             href="#lead-form"
             onClick={() => setMobileOpen(false)}
@@ -188,7 +263,7 @@ export default function Navbar() {
               textDecoration: "none",
             }}
           >
-            Get a Free Quote
+            {t("nav.cta")}
           </a>
         </div>
       </div>
