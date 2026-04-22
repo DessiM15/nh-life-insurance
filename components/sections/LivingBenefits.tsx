@@ -57,11 +57,11 @@ export default function LivingBenefits() {
         background: "linear-gradient(180deg, #0A2D5A 0%, #0E3A6E 100%)",
         position: "relative",
         overflow: "hidden",
-        padding: "80px 24px 0",
+        padding: "100px 24px 0",
       }}
     >
       {/* Header */}
-      <div className="reveal" style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 48px" }}>
+      <div className="reveal" style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto 56px" }}>
         <span
           style={{
             display: "inline-block",
@@ -79,7 +79,7 @@ export default function LivingBenefits() {
         <h2
           style={{
             color: "#FFFFFF",
-            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+            fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
             fontWeight: 800,
             lineHeight: 1.15,
             marginBottom: "20px",
@@ -90,7 +90,7 @@ export default function LivingBenefits() {
         <p
           style={{
             color: "rgba(255,255,255,0.7)",
-            fontSize: "1.05rem",
+            fontSize: "1.15rem",
             lineHeight: 1.7,
             fontFamily: "var(--font-serif)",
             fontStyle: "italic",
@@ -107,7 +107,7 @@ export default function LivingBenefits() {
           style={{
             position: "relative",
             width: "100%",
-            maxWidth: "600px",
+            maxWidth: "780px",
           }}
           className="dome-container"
         >
@@ -131,18 +131,18 @@ export default function LivingBenefits() {
                     background: "rgba(201, 160, 64, 0.15)",
                     border: "1px solid rgba(201, 160, 64, 0.5)",
                     borderRadius: "999px",
-                    padding: "8px 16px",
+                    padding: "10px 20px",
                     display: "flex",
                     alignItems: "center",
-                    gap: "8px",
+                    gap: "10px",
                     color: "#C9A040",
-                    fontSize: "0.8rem",
+                    fontSize: "0.85rem",
                     fontWeight: 700,
                     letterSpacing: "0.04em",
                     textTransform: "uppercase",
                   }}
                 >
-                  <Icon size={16} />
+                  <Icon size={18} />
                   {benefit.label}
                 </div>
               );
@@ -233,12 +233,12 @@ export default function LivingBenefits() {
                     background: "rgba(10, 45, 90, 0.9)",
                     border: "1px solid rgba(201, 160, 64, 0.5)",
                     borderRadius: "999px",
-                    padding: "8px 16px",
+                    padding: "10px 20px",
                     display: "flex",
                     alignItems: "center",
-                    gap: "8px",
+                    gap: "10px",
                     color: "#C9A040",
-                    fontSize: "0.75rem",
+                    fontSize: "0.85rem",
                     fontWeight: 700,
                     letterSpacing: "0.04em",
                     textTransform: "uppercase",
@@ -247,7 +247,7 @@ export default function LivingBenefits() {
                     boxShadow: "0 2px 12px rgba(201, 160, 64, 0.2)",
                   }}
                 >
-                  <Icon size={15} />
+                  <Icon size={18} />
                   {benefit.label}
                 </div>
               );
@@ -281,7 +281,7 @@ export default function LivingBenefits() {
                     }}
                   >
                     <Icon
-                      size={28}
+                      size={38}
                       style={{
                         color: "rgba(255,255,255,0.7)",
                       }}
@@ -291,7 +291,7 @@ export default function LivingBenefits() {
                       className="dome-asset-label"
                       style={{
                         color: "rgba(255,255,255,0.5)",
-                        fontSize: "0.65rem",
+                        fontSize: "0.75rem",
                         fontWeight: 600,
                         textTransform: "uppercase",
                         letterSpacing: "0.06em",
@@ -308,7 +308,7 @@ export default function LivingBenefits() {
       </div>
 
       {/* CTA */}
-      <div className="reveal" style={{ textAlign: "center", padding: "40px 0 60px" }}>
+      <div className="reveal" style={{ textAlign: "center", padding: "48px 0 72px" }}>
         <button
           onClick={scrollToForm}
           style={{
@@ -350,7 +350,7 @@ export default function LivingBenefits() {
       <style jsx>{`
         @media (max-width: 768px) {
           .dome-container {
-            max-width: 320px !important;
+            max-width: 380px !important;
           }
           .mobile-benefit-pills {
             display: flex !important;
@@ -359,11 +359,11 @@ export default function LivingBenefits() {
             display: none !important;
           }
           .dome-asset-icon {
-            width: 22px !important;
-            height: 22px !important;
+            width: 28px !important;
+            height: 28px !important;
           }
           .dome-asset-label {
-            font-size: 0.55rem !important;
+            font-size: 0.65rem !important;
           }
         }
       `}</style>
