@@ -80,3 +80,28 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--color-blue-dark); }
 .hero-bounce {
   animation: heroBounce 1.5s ease-in-out infinite;
 }
+
+@keyframes domeGlow {
+  0%, 100% { opacity: 0.5; box-shadow: 0 0 30px rgba(201, 160, 64, 0.3); }
+  50% { opacity: 1; box-shadow: 0 0 60px rgba(201, 160, 64, 0.6), 0 0 90px rgba(201, 160, 64, 0.2); }
+}
+
+@keyframes domeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.dome-glow {
+  animation: domeGlow 3s ease-in-out infinite;
+}
+
+.dome-float {
+  animation: domeFloat 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dome-glow,
+  .dome-float {
+    animation: none;
+  }
+}

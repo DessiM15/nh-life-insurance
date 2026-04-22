@@ -1,7 +1,9 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
+import LivingBenefits from "@/components/sections/LivingBenefits";
 import StatsBar from "@/components/sections/StatsBar";
+import OldVsNew from "@/components/sections/OldVsNew";
 import WhyLifeInsurance from "@/components/sections/WhyLifeInsurance";
 import CoverageOptions from "@/components/sections/CoverageOptions";
 import WhoIsItFor from "@/components/sections/WhoIsItFor";
@@ -14,7 +16,9 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <LivingBenefits />
       <StatsBar />
+      <OldVsNew />
       <WhyLifeInsurance />
       <CoverageOptions />
       <WhoIsItFor />
