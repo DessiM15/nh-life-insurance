@@ -286,7 +286,7 @@ export default function LeadForm() {
                 >
                   {t("form.finePrint")}
                   <br />
-                  New Horizons Benefits Group | (469) 831-2672 |
+                  New Horizons Financial Services | (469) 831-2672 |
                   robert@newhorizonsbenefits.com
                 </p>
               </>

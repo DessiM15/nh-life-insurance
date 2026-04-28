@@ -125,7 +125,7 @@ export default function Navbar() {
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: "6px", flexShrink: 0, textDecoration: "none" }}>
           <Image
             src="/logo-transparent.png"
-            alt="New Horizons Benefits Group"
+            alt="New Horizons Financial Services"
             width={400}
             height={400}
             style={{
@@ -144,7 +144,7 @@ export default function Navbar() {
               color: scrolled ? "#0A2D5A" : "#FFFFFF",
             }}
           >
-            New Horizons Benefits Group
+            New Horizons Financial Services
           </span>
         </Link>
 

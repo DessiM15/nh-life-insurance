@@ -15,7 +15,7 @@ export default function Footer() {
             <div style={{ marginBottom: "16px" }}>
               <Image
                 src="/logo-transparent.png"
-                alt="New Horizons Benefits Group"
+                alt="New Horizons Financial Services"
                 width={400}
                 height={400}
                 style={{ height: "165px", width: "165px", objectFit: "contain" }}
@@ -25,7 +25,7 @@ export default function Footer() {
               <span
                 style={{ color: "#FFFFFF", fontSize: "1.125rem", fontWeight: 700 }}
               >
-                New Horizons Benefits Group
+                New Horizons Financial Services
               </span>
               <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem" }}>
                 {t("footer.agentName")}

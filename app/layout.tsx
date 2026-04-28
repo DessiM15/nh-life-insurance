@@ -26,9 +26,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "New Horizons Benefits Group | Life Insurance for Texans",
+  title: "New Horizons Financial Services | Life Insurance for Texans",
   description:
-    "Protect your family's future with affordable life insurance. New Horizons Benefits Group helps Texans find the right coverage. Free consultation.",
+    "Protect your family's future with affordable life insurance. New Horizons Financial Services helps Texans find the right coverage. Free consultation.",
 };
 
 export default function RootLayout({

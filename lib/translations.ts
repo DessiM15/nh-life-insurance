@@ -11,7 +11,7 @@ const translations = {
     // Hero
     "hero.headline": "Your Family Deserves Protection. Let\u2019s Find the Right Plan.",
     "hero.subheadline":
-      "New Horizons Benefits Group helps individuals, families, and business owners find affordable life insurance \u2014 with options that fit every budget and stage of life.",
+      "New Horizons Financial Services helps individuals, families, and business owners find affordable life insurance \u2014 with options that fit every budget and stage of life.",
     "hero.cta": "Get My Free Quote \u2192",
     "hero.trust1": "Multi-Carrier Access",
     "hero.trust2": "No Medical Exam Options",
@@ -92,9 +92,10 @@ const translations = {
     "coverage.wholeTitle": "Whole Life Insurance",
     "coverage.wholeDesc":
       "Permanent coverage that never expires. Builds cash value over time that you can borrow against. Guaranteed death benefit for your beneficiaries.",
-    "coverage.universalTitle": "Universal Life Insurance",
-    "coverage.universalDesc":
-      "Flexible permanent coverage with adjustable premiums and death benefits. Accumulates cash value with potential for higher returns.",
+    "coverage.iulTitle": "Indexed Universal Life (IUL)",
+    "coverage.iulDesc":
+      "Permanent coverage with cash value growth tied to market indexes like the S\u0026P 500 \u2014 with downside protection. Flexible premiums, tax-advantaged growth, and living benefits built in.",
+    "coverage.iulEducation": "Kids Education: Use your policy\u2019s cash value to help fund your children\u2019s education \u2014 tax-advantaged and flexible. More details coming soon.",
     "coverage.finalTitle": "Final Expense Insurance",
     "coverage.finalDesc":
       "Smaller, affordable policies designed to cover funeral costs, medical bills, and end-of-life expenses. No medical exam required in most cases.",
@@ -122,6 +123,10 @@ const translations = {
     "who.card3Body":
       "Need final expense coverage, estate planning support, or a policy to leave a legacy? We\u2019ll find the right fit for your situation.",
     "who.card3Hook": "Does your coverage survive your career?",
+    "who.card4Title": "College Planning",
+    "who.card4Body":
+      "Life insurance can be a great college planning tool. IUL policies build tax-advantaged cash value you can use for tuition, books, and living expenses \u2014 without the restrictions of a 529 plan.",
+    "who.card4Hook": "Give your kids a head start without sacrificing your financial security.",
 
     // How It Works
     "how.label": "How It Works",
@@ -190,9 +195,9 @@ const translations = {
     "footer.licensed": "Licensed in TX \u00B7 LA \u00B7 OK \u00B7 CA",
     "footer.multiCarrier": "Multi-Carrier Independent Agency",
     "footer.servingTexans": "Serving Texans Since Day One",
-    "footer.copyright": "\u00A9 2026 New Horizons Benefits Group. All rights reserved.",
+    "footer.copyright": "\u00A9 2026 New Horizons Financial Services. All rights reserved.",
     "footer.disclaimer":
-      "New Horizons Benefits Group is an independent insurance agency. Coverage and pricing vary by carrier. All quotes are estimates pending underwriting approval.",
+      "New Horizons Financial Services is an independent insurance agency. Coverage and pricing vary by carrier. All quotes are estimates pending underwriting approval.",
   },
 
   es: {
@@ -205,7 +210,7 @@ const translations = {
     // Hero
     "hero.headline": "Tu Familia Merece Protecci\u00F3n. Encontremos el Plan Ideal.",
     "hero.subheadline":
-      "New Horizons Benefits Group ayuda a individuos, familias y due\u00F1os de negocios a encontrar un seguro de vida accesible \u2014 con opciones para cada presupuesto y etapa de la vida.",
+      "New Horizons Financial Services ayuda a individuos, familias y due\u00F1os de negocios a encontrar un seguro de vida accesible \u2014 con opciones para cada presupuesto y etapa de la vida.",
     "hero.cta": "Obt\u00E9n Tu Cotizaci\u00F3n Gratis \u2192",
     "hero.trust1": "Acceso a M\u00FAltiples Aseguradoras",
     "hero.trust2": "Opciones Sin Examen M\u00E9dico",
@@ -286,9 +291,10 @@ const translations = {
     "coverage.wholeTitle": "Seguro de Vida Entera",
     "coverage.wholeDesc":
       "Cobertura permanente que nunca expira. Acumula valor en efectivo con el tiempo. Beneficio por fallecimiento garantizado para tus beneficiarios.",
-    "coverage.universalTitle": "Seguro de Vida Universal",
-    "coverage.universalDesc":
-      "Cobertura permanente flexible con primas y beneficios ajustables. Acumula valor en efectivo con potencial de mayores rendimientos.",
+    "coverage.iulTitle": "Vida Universal Indexada (IUL)",
+    "coverage.iulDesc":
+      "Cobertura permanente con crecimiento de valor en efectivo vinculado a \u00EDndices del mercado como el S\u0026P 500 \u2014 con protecci\u00F3n contra ca\u00EDdas. Primas flexibles, crecimiento con ventajas fiscales y beneficios en vida incluidos.",
+    "coverage.iulEducation": "Educaci\u00F3n de los Hijos: Usa el valor en efectivo de tu p\u00F3liza para ayudar a financiar la educaci\u00F3n de tus hijos \u2014 con ventajas fiscales y flexibilidad. M\u00E1s detalles pr\u00F3ximamente.",
     "coverage.finalTitle": "Seguro de Gastos Finales",
     "coverage.finalDesc":
       "P\u00F3lizas m\u00E1s peque\u00F1as y accesibles dise\u00F1adas para cubrir costos funerarios, facturas m\u00E9dicas y gastos de fin de vida. Sin examen m\u00E9dico en la mayor\u00EDa de los casos.",
@@ -316,6 +322,10 @@ const translations = {
     "who.card3Body":
       "\u00BFNecesitas cobertura de gastos finales, apoyo en planificaci\u00F3n patrimonial o una p\u00F3liza para dejar un legado? Encontraremos la opci\u00F3n ideal para tu situaci\u00F3n.",
     "who.card3Hook": "\u00BFTu cobertura sobrevive a tu carrera?",
+    "who.card4Title": "Planificaci\u00F3n Universitaria",
+    "who.card4Body":
+      "El seguro de vida puede ser una gran herramienta de planificaci\u00F3n universitaria. Las p\u00F3lizas IUL acumulan valor en efectivo con ventajas fiscales que puedes usar para matr\u00EDcula, libros y gastos de manutenci\u00F3n \u2014 sin las restricciones de un plan 529.",
+    "who.card4Hook": "Dale a tus hijos una ventaja sin sacrificar tu seguridad financiera.",
 
     // How It Works
     "how.label": "C\u00F3mo Funciona",
@@ -384,9 +394,9 @@ const translations = {
     "footer.licensed": "Licenciado en TX \u00B7 LA \u00B7 OK \u00B7 CA",
     "footer.multiCarrier": "Agencia Independiente Multi-Aseguradora",
     "footer.servingTexans": "Sirviendo a Tejanos Desde el Primer D\u00EDa",
-    "footer.copyright": "\u00A9 2026 New Horizons Benefits Group. Todos los derechos reservados.",
+    "footer.copyright": "\u00A9 2026 New Horizons Financial Services. Todos los derechos reservados.",
     "footer.disclaimer":
-      "New Horizons Benefits Group es una agencia de seguros independiente. La cobertura y los precios var\u00EDan seg\u00FAn la aseguradora. Todas las cotizaciones son estimados sujetos a aprobaci\u00F3n de suscripci\u00F3n.",
+      "New Horizons Financial Services es una agencia de seguros independiente. La cobertura y los precios var\u00EDan seg\u00FAn la aseguradora. Todas las cotizaciones son estimados sujetos a aprobaci\u00F3n de suscripci\u00F3n.",
   },
 } as const;
 

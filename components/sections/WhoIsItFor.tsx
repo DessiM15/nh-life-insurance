@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart, BookOpen, Building2 } from "lucide-react";
+import { Heart, BookOpen, Building2, GraduationCap } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { TranslationKey } from "@/lib/translations";
@@ -32,6 +32,13 @@ const cards: {
     titleKey: "who.card3Title",
     bodyKey: "who.card3Body",
     hookKey: "who.card3Hook",
+  },
+  {
+    number: "04",
+    icon: GraduationCap,
+    titleKey: "who.card4Title",
+    bodyKey: "who.card4Body",
+    hookKey: "who.card4Hook",
   },
 ];
 
@@ -69,7 +76,7 @@ export default function WhoIsItFor() {
         </p>
 
         {/* Cards */}
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card, i) => (
             <div
               key={card.number}

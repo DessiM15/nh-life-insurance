@@ -12,10 +12,10 @@ import useScrollReveal from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { TranslationKey } from "@/lib/translations";
 
-const plans: { icon: typeof Clock; titleKey: TranslationKey; descKey: TranslationKey }[] = [
+const plans: { icon: typeof Clock; titleKey: TranslationKey; descKey: TranslationKey; extraKey?: TranslationKey }[] = [
+  { icon: Layers, titleKey: "coverage.iulTitle", descKey: "coverage.iulDesc", extraKey: "coverage.iulEducation" },
   { icon: Clock, titleKey: "coverage.termTitle", descKey: "coverage.termDesc" },
   { icon: ShieldCheck, titleKey: "coverage.wholeTitle", descKey: "coverage.wholeDesc" },
-  { icon: Layers, titleKey: "coverage.universalTitle", descKey: "coverage.universalDesc" },
   { icon: Heart, titleKey: "coverage.finalTitle", descKey: "coverage.finalDesc" },
   { icon: UserPlus, titleKey: "coverage.groupTitle", descKey: "coverage.groupDesc" },
   { icon: CheckCircle2, titleKey: "coverage.guaranteedTitle", descKey: "coverage.guaranteedDesc" },
@@ -102,6 +102,14 @@ export default function CoverageOptions() {
               >
                 {t(plan.descKey)}
               </p>
+              {plan.extraKey && (
+                <p
+                  className="mt-3 text-sm leading-relaxed rounded-lg p-3"
+                  style={{ color: "#0A2D5A", backgroundColor: "#E8F0FA", fontWeight: 500 }}
+                >
+                  {t(plan.extraKey)}
+                </p>
+              )}
             </div>
           ))}
         </div>
