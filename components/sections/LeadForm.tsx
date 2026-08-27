@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -223,6 +224,67 @@ export default function LeadForm() {
                         onFocus={handleFocus}
                         onBlur={handleBlur}
                       />
+                    </div>
+
+                    {/* SMS Consent — optional; consent is not a condition of purchase */}
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "12px",
+                        alignItems: "flex-start",
+                        backgroundColor: "#F8FAFD",
+                        border: "1px solid #CBD5E1",
+                        borderRadius: "10px",
+                        padding: "14px 16px",
+                      }}
+                    >
+                      <input
+                        type="checkbox"
+                        id="smsConsent"
+                        name="smsConsent"
+                        value="yes"
+                        style={{
+                          marginTop: "3px",
+                          width: "18px",
+                          height: "18px",
+                          flexShrink: 0,
+                          accentColor: "#144F8F",
+                          cursor: "pointer",
+                        }}
+                      />
+                      <label
+                        htmlFor="smsConsent"
+                        style={{
+                          fontSize: "0.75rem",
+                          lineHeight: 1.65,
+                          color: "#64748B",
+                          cursor: "pointer",
+                        }}
+                      >
+                        <span
+                          style={{
+                            display: "block",
+                            fontSize: "0.65rem",
+                            fontWeight: 700,
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em",
+                            color: "#94A3B8",
+                            marginBottom: "4px",
+                          }}
+                        >
+                          {t("form.optional")}
+                        </span>
+                        {t("form.smsConsent")}{" "}
+                        {t("form.consentSee")}{" "}
+                        <Link href="/privacy-policy" style={{ color: "#144F8F", fontWeight: 600, textDecoration: "underline" }}>
+                          {t("footer.privacy")}
+                        </Link>{" "}
+                        {t("form.consentAnd")}{" "}
+                        <Link href="/privacy-policy#terms" style={{ color: "#144F8F", fontWeight: 600, textDecoration: "underline" }}>
+                          {t("footer.terms")}
+                        </Link>
+                        {"."}
+                      </label>
                     </div>
 
                     {/* Submit Button */}

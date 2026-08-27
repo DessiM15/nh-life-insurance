@@ -198,6 +198,64 @@ const translations = {
     "footer.copyright": "\u00A9 2026 New Horizons Financial Services. All rights reserved.",
     "footer.disclaimer":
       "New Horizons Financial Services is an independent insurance agency. Coverage and pricing vary by carrier. All quotes are estimates pending underwriting approval.",
+
+    // Legal Page
+    "legal.eyebrow": "LEGAL",
+    "legal.title": "Terms of Service and Privacy Policy",
+    "legal.entity":
+      "New Horizons Benefits Group, a d/b/a of New Horizons Financial Services LLC",
+    "legal.effective": "Effective Date: August 21, 2026",
+    "legal.backHome": "← Back to Home",
+    "legal.jumpPrivacy": "Privacy Policy",
+    "legal.jumpTerms": "Terms of Service",
+
+    // Legal — Privacy Policy
+    "legal.privacy.heading": "Privacy Policy",
+    "legal.privacy.intro":
+      "New Horizons Benefits Group, a d/b/a of New Horizons Financial Services LLC (“we,” “us,” or “our”), is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect information you provide through our website.",
+    "legal.privacy.collectHeading": "Information We Collect",
+    "legal.privacy.collectBody":
+      "We collect information you voluntarily submit through our contact forms and appointment requests, including your name, phone number, email address, and any details you share about your insurance or financial planning needs.",
+    "legal.privacy.useHeading": "How We Use It",
+    "legal.privacy.useBody":
+      "We use the information you provide to respond to your inquiry, schedule appointments, and provide you with information about our products and services. We do not sell your personal information to third parties.",
+    "legal.privacy.smsHeading": "SMS Communications",
+    "legal.privacy.smsBody":
+      "If you provide your phone number and opt in to text messaging, you agree to receive SMS messages from New Horizons Benefits Group related to your inquiry, appointment reminders, and follow-up communications. Message and data rates may apply. Message frequency varies. Reply STOP at any time to opt out, or reply HELP for assistance. Consent to receive SMS is not a condition of any purchase.",
+    "legal.privacy.sharingHeading": "Data Sharing",
+    "legal.privacy.sharingBody":
+      "We do not share your personal information with third parties except as necessary to service your request (for example, with insurance carriers when processing an application) or as required by law.",
+    "legal.privacy.contactHeading": "Contact",
+    "legal.privacy.contactBody":
+      "If you have questions about this Privacy Policy, contact us at:",
+
+    // Legal — Terms of Service
+    "legal.terms.heading": "Terms of Service",
+    "legal.terms.intro":
+      "By using this website and submitting your information, you agree to the following terms.",
+    "legal.terms.servicesHeading": "Services",
+    "legal.terms.servicesBody":
+      "New Horizons Benefits Group provides information about insurance and financial planning services. Nothing on this website constitutes a guarantee of coverage, rates, or approval. All insurance products are subject to underwriting and carrier approval.",
+    "legal.terms.smsHeading": "SMS Opt-In",
+    "legal.terms.smsBody":
+      "By submitting your phone number and opting in, you consent to receive text messages from New Horizons Benefits Group as described in our Privacy Policy. Consent is not required to purchase any product or service.",
+    "legal.terms.guaranteeHeading": "No Guarantee",
+    "legal.terms.guaranteeBody":
+      "Information on this site is for general educational purposes and does not constitute tax, legal, or investment advice. Consult a qualified professional for guidance specific to your situation.",
+    "legal.terms.contactHeading": "Contact",
+    "legal.terms.contactBody":
+      "Questions about these Terms should be directed to:",
+
+    // Footer legal links
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Service",
+
+    // SMS Consent (lead form)
+    "form.optional": "Optional",
+    "form.smsConsent":
+      "I agree to receive text messages from New Horizons Benefits Group at the phone number provided, including responses to my inquiry, appointment reminders, and follow-up communications. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for assistance. Consent is not a condition of purchase.",
+    "form.consentSee": "See our",
+    "form.consentAnd": "and",
   },
 
   es: {
@@ -397,6 +455,64 @@ const translations = {
     "footer.copyright": "\u00A9 2026 New Horizons Financial Services. Todos los derechos reservados.",
     "footer.disclaimer":
       "New Horizons Financial Services es una agencia de seguros independiente. La cobertura y los precios var\u00EDan seg\u00FAn la aseguradora. Todas las cotizaciones son estimados sujetos a aprobaci\u00F3n de suscripci\u00F3n.",
+
+    // Legal Page
+    "legal.eyebrow": "LEGAL",
+    "legal.title": "Términos de Servicio y Política de Privacidad",
+    "legal.entity":
+      "New Horizons Benefits Group, un nombre comercial (d/b/a) de New Horizons Financial Services LLC",
+    "legal.effective": "Fecha de Vigencia: 21 de agosto de 2026",
+    "legal.backHome": "← Volver al Inicio",
+    "legal.jumpPrivacy": "Política de Privacidad",
+    "legal.jumpTerms": "Términos de Servicio",
+
+    // Legal — Política de Privacidad
+    "legal.privacy.heading": "Política de Privacidad",
+    "legal.privacy.intro":
+      "New Horizons Benefits Group, un nombre comercial (d/b/a) de New Horizons Financial Services LLC (“nosotros” o “nuestro”), se compromete a proteger su privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos la información que usted proporciona a través de nuestro sitio web.",
+    "legal.privacy.collectHeading": "Información que Recopilamos",
+    "legal.privacy.collectBody":
+      "Recopilamos la información que usted envía voluntariamente a través de nuestros formularios de contacto y solicitudes de cita, incluyendo su nombre, número de teléfono, dirección de correo electrónico y cualquier detalle que comparta sobre sus necesidades de seguros o planificación financiera.",
+    "legal.privacy.useHeading": "Cómo la Usamos",
+    "legal.privacy.useBody":
+      "Usamos la información que usted proporciona para responder a su consulta, programar citas y brindarle información sobre nuestros productos y servicios. No vendemos su información personal a terceros.",
+    "legal.privacy.smsHeading": "Comunicaciones por SMS",
+    "legal.privacy.smsBody":
+      "Si usted proporciona su número de teléfono y acepta recibir mensajes de texto, acepta recibir mensajes SMS de New Horizons Benefits Group relacionados con su consulta, recordatorios de citas y comunicaciones de seguimiento. Pueden aplicarse tarifas de mensajes y datos. La frecuencia de los mensajes varía. Responda STOP en cualquier momento para cancelar la suscripción, o responda HELP para obtener ayuda. El consentimiento para recibir mensajes SMS no es condición para ninguna compra.",
+    "legal.privacy.sharingHeading": "Compartir Datos",
+    "legal.privacy.sharingBody":
+      "No compartimos su información personal con terceros, excepto cuando sea necesario para atender su solicitud (por ejemplo, con las aseguradoras al procesar una solicitud) o según lo exija la ley.",
+    "legal.privacy.contactHeading": "Contacto",
+    "legal.privacy.contactBody":
+      "Si tiene preguntas sobre esta Política de Privacidad, contáctenos en:",
+
+    // Legal — Términos de Servicio
+    "legal.terms.heading": "Términos de Servicio",
+    "legal.terms.intro":
+      "Al usar este sitio web y enviar su información, usted acepta los siguientes términos.",
+    "legal.terms.servicesHeading": "Servicios",
+    "legal.terms.servicesBody":
+      "New Horizons Benefits Group proporciona información sobre servicios de seguros y planificación financiera. Nada en este sitio web constituye una garantía de cobertura, tarifas o aprobación. Todos los productos de seguros están sujetos a suscripción y aprobación de la aseguradora.",
+    "legal.terms.smsHeading": "Consentimiento para SMS",
+    "legal.terms.smsBody":
+      "Al enviar su número de teléfono y dar su consentimiento, usted acepta recibir mensajes de texto de New Horizons Benefits Group como se describe en nuestra Política de Privacidad. El consentimiento no es requisito para comprar ningún producto o servicio.",
+    "legal.terms.guaranteeHeading": "Sin Garantía",
+    "legal.terms.guaranteeBody":
+      "La información en este sitio es para fines educativos generales y no constituye asesoramiento fiscal, legal o de inversión. Consulte a un profesional calificado para obtener orientación específica para su situación.",
+    "legal.terms.contactHeading": "Contacto",
+    "legal.terms.contactBody":
+      "Las preguntas sobre estos Términos deben dirigirse a:",
+
+    // Footer legal links
+    "footer.privacy": "Política de Privacidad",
+    "footer.terms": "Términos de Servicio",
+
+    // SMS Consent (formulario)
+    "form.optional": "Opcional",
+    "form.smsConsent":
+      "Acepto recibir mensajes de texto de New Horizons Benefits Group al número de teléfono proporcionado, incluyendo respuestas a mi consulta, recordatorios de citas y comunicaciones de seguimiento. Pueden aplicarse tarifas de mensajes y datos. La frecuencia de los mensajes varía. Responda STOP para cancelar o HELP para obtener ayuda. El consentimiento no es condición de compra.",
+    "form.consentSee": "Consulte nuestra",
+    "form.consentAnd": "y",
   },
 } as const;
 

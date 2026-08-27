@@ -8,9 +8,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import type { TranslationKey } from "@/lib/translations";
 
 const navLinks: { key: TranslationKey; href: string }[] = [
-  { key: "nav.coverage", href: "#coverage" },
-  { key: "nav.howItWorks", href: "#how-it-works" },
-  { key: "nav.reviews", href: "#testimonials" },
+  { key: "nav.coverage", href: "/#coverage" },
+  { key: "nav.howItWorks", href: "/#how-it-works" },
+  { key: "nav.reviews", href: "/#testimonials" },
 ];
 
 export default function Navbar() {
@@ -151,7 +151,7 @@ export default function Navbar() {
         {/* Desktop Nav Links + Toggle + CTA */}
         <div className="hidden md:flex" style={{ alignItems: "center", gap: "32px" }}>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.key}
               href={link.href}
               style={{
@@ -165,13 +165,13 @@ export default function Navbar() {
               onMouseLeave={(e) => (e.currentTarget.style.color = scrolled ? "#0A2D5A" : "#FFFFFF")}
             >
               {t(link.key)}
-            </a>
+            </Link>
           ))}
 
           {toggleButton}
 
-          <a
-            href="#lead-form"
+          <Link
+            href="/#lead-form"
             style={{
               display: "inline-block",
               backgroundColor: "#C9A040",
@@ -192,7 +192,7 @@ export default function Navbar() {
             }}
           >
             {t("nav.cta")}
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -224,7 +224,7 @@ export default function Navbar() {
       >
         <div style={{ display: "flex", flexDirection: "column", gap: "4px", padding: "8px 24px 24px" }}>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.key}
               href={link.href}
               onClick={() => setMobileOpen(false)}
@@ -242,13 +242,13 @@ export default function Navbar() {
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
             >
               {t(link.key)}
-            </a>
+            </Link>
           ))}
 
           {mobileToggle}
 
-          <a
-            href="#lead-form"
+          <Link
+            href="/#lead-form"
             onClick={() => setMobileOpen(false)}
             style={{
               display: "block",
@@ -264,7 +264,7 @@ export default function Navbar() {
             }}
           >
             {t("nav.cta")}
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
@@ -142,6 +143,36 @@ export default function Footer() {
           className="mt-12 pt-8 text-center"
           style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
         >
+          {/* Legal Links */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: "8px 24px",
+              marginBottom: "20px",
+            }}
+          >
+            <Link
+              href="/privacy-policy"
+              className="transition-colors duration-300"
+              style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.9rem", textDecoration: "none" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A040")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.55)")}
+            >
+              {t("footer.privacy")}
+            </Link>
+            <Link
+              href="/privacy-policy#terms"
+              className="transition-colors duration-300"
+              style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.9rem", textDecoration: "none" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A040")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.55)")}
+            >
+              {t("footer.terms")}
+            </Link>
+          </div>
+
           <p
             style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.95rem", marginBottom: "8px" }}
           >
